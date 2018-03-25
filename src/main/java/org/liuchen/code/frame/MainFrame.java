@@ -26,7 +26,7 @@ public class MainFrame extends JFrame {
     private JLabel jLabel8;
     private JTextField author;
 
-    public MainFrame(){
+    public MainFrame() {
         initComponents();
 //        if(ObjectHelper.isNullOrEmptyString(SqliteUtil.getProperty("version"))){}
 
@@ -81,7 +81,7 @@ public class MainFrame extends JFrame {
         /**
          * 为"下一步"按钮添加事件监听
          */
-        jButton1.addActionListener((evt)-> jButton1ActionPerformed(evt));
+        jButton1.addActionListener((evt) -> jButton1ActionPerformed(evt));
 
 
         GroupLayout layout = new GroupLayout(getContentPane());
@@ -91,7 +91,7 @@ public class MainFrame extends JFrame {
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup (layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel4)
@@ -207,8 +207,18 @@ public class MainFrame extends JFrame {
         pack();
     }
 
+    /**
+     * 下一步按钮的监听事件
+     * 1)点击下一步，mainFrame设置不可见，selectTables设置可见
+     *
+     * @param evt
+     */
     private void jButton1ActionPerformed(ActionEvent evt) {
         System.out.println("成功点击下一步");
+        // 点击下一步，出现selectTables界面
+        SelectTables selectTables = new SelectTables(this);
+        //
         this.setVisible(false);
+        selectTables.setVisible(true);
     }
 }

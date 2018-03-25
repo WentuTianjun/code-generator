@@ -4,11 +4,25 @@ import java.lang.reflect.Array;
 import java.util.Collection;
 import java.util.Map;
 
+/**
+ * Object工具类
+ */
 public class ObjectHelper {
+    /**
+     * 判断对象o是否为null或者空串
+     *
+     * @param o
+     * @return
+     */
     public static boolean isNullOrEmptyString(Object o) {
         return o == null ? true : o.toString().length() == 0;
     }
 
+    /**
+     *
+     * @param o
+     * @return
+     */
     public static boolean isEmpty(Object o) {
         if (null == o) {
             return true;
