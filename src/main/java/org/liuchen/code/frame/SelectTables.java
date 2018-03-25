@@ -1,10 +1,8 @@
 package org.liuchen.code.frame;
 
 import org.liuchen.code.db.ADatabaseInfo;
-import org.liuchen.code.domain.TableInfo;
 import org.liuchen.code.plugin.CustomCellEditor;
 import org.liuchen.code.plugin.CustomTableListModel;
-import org.liuchen.code.utils.ObjectHelper;
 
 import javax.swing.*;
 import java.awt.*;
@@ -44,7 +42,7 @@ public class SelectTables extends JFrame {
 
     public void setDatabaseInfo(ADatabaseInfo databaseInfo) {
         this.databaseInfo = databaseInfo;
-        model.addTableList(databaseInfo.getTableList());
+//        model.addTableList(databaseInfo.getTableList());
     }
 
     /** This method is called from within the constructor to initialize the
@@ -204,22 +202,23 @@ public class SelectTables extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        model.selectAll();
+
+//        model.selectAll();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void nextActionPerformed(ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
         try {
-            java.util.List<TableInfo> selectedList = model.getSelectedList();
-            if (ObjectHelper.isNotEmpty(selectedList)) {
-                java.util.List<TableBean> tableBeans = new ArrayList<TableBean>();
-                for (TableInfo map : selectedList) {
-                    TableBean tableBean = databaseInfo.getTableInfo(map);
-                    tableBeans.add(tableBean);
-                }
-                this.dispose();
-                SelectColumns selectColumns = new SelectColumns(this, tableBeans, 0);
-                selectColumns.setVisible(true);
-            }
+//            java.util.List<TableInfo> selectedList = model.getSelectedList();
+//            if (ObjectHelper.isNotEmpty(selectedList)) {
+//                java.util.List<TableBean> tableBeans = new ArrayList<TableBean>();
+//                for (TableInfo map : selectedList) {
+//                    TableBean tableBean = databaseInfo.getTableInfo(map);
+//                    tableBeans.add(tableBean);
+//                }
+//                this.dispose();
+//                SelectColumns selectColumns = new SelectColumns(this, tableBeans, 0);
+//                selectColumns.setVisible(true);
+//            }
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(rootPane, e.getMessage());
@@ -227,25 +226,25 @@ public class SelectTables extends JFrame {
     }//GEN-LAST:event_nextActionPerformed
 
     private void buildModel() {
-        java.util.List<TableInfo> selectedList = model.getSelectedList();
+//        java.util.List<TableInfo> selectedList = model.getSelectedList();
 
 
 //        GenerateFactory.ini();
-        for (TableInfo map : selectedList) {
-            TableBean tableBean = databaseInfo.getTableInfo(map);
-            //GenerateFactory.generate(tableBean);
-            CodeGenerateFactory.codeGenerate(tableBean);
-        }
+//        for (TableInfo map : selectedList) {
+//            TableBean tableBean = databaseInfo.getTableInfo(map);
+//            //GenerateFactory.generate(tableBean);
+//            CodeGenerateFactory.codeGenerate(tableBean);
+//        }
 //        GenerateFactory.generateGolable();
         JOptionPane.showMessageDialog(this, "生成完毕！");
     }
     private void jButton2ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        model.selectAllTable();
+//        model.selectAllTable();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         try {
-            model.addTableList(databaseInfo.getTableList(search.getText()));
+//            model.addTableList(databaseInfo.getTableList(search.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());
         }
@@ -253,7 +252,7 @@ public class SelectTables extends JFrame {
 
     private void jButton3ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try {
-            model.reTranslate(databaseInfo.getTableList(search.getText()));
+//            model.reTranslate(databaseInfo.getTableList(search.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());
         }
