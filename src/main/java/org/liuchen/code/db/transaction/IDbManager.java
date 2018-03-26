@@ -1,16 +1,7 @@
 package org.liuchen.code.db.transaction;
 
-import org.liuchen.code.db.config.DbConfig;
-
-import java.sql.Connection;
-import java.sql.SQLException;
-
+/**
+ * Created by liuchen25 on 2018/3/25.
+ */
 public interface IDbManager {
-    Connection getConnection();
-
-    void commit() throws SQLException;
-
-    DbConfig getDefaultDbConfig();
-
-    void closeConnection() throws SQLException;
 }
