@@ -1,5 +1,8 @@
 package org.liuchen.code.frame;
 
+import org.liuchen.code.db.util.SqliteUtil;
+import org.liuchen.code.utils.ObjectHelper;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
@@ -28,7 +31,7 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
         initComponents();
-//        if(ObjectHelper.isNullOrEmptyString(SqliteUtil.getProperty("version"))){}
+        if(ObjectHelper.isNullOrEmptyString(SqliteUtil.getProperty("version"))){}
 
 //        Toolkit tk = Toolkit.getDefaultToolkit();
     }
