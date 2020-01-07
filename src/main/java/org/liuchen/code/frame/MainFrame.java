@@ -31,7 +31,8 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
         initComponents();
-        if(ObjectHelper.isNullOrEmptyString(SqliteUtil.getProperty("version"))){}
+        if (ObjectHelper.isNullOrEmptyString(SqliteUtil.getProperty("version"))) {
+        }
 
 //        Toolkit tk = Toolkit.getDefaultToolkit();
     }

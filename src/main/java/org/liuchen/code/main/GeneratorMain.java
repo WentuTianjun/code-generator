@@ -24,7 +24,7 @@ public class GeneratorMain {
             () -> {
                 try {
                     BeautyEyeLNFHelper.launchBeautyEyeLNF();
-                    //设置本属性将改变窗口边框样式定义
+                    // 设置本属性将改变窗口边框样式定义
                     BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
                     BeautyEyeLNFHelper.launchBeautyEyeLNF();
 
